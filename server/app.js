@@ -1,3 +1,4 @@
+// Entry point for app
 const express = require('express');
 require('express-async-errors');
 const morgan = require('morgan'); // Log HTTP requests and errors // simplifies process
@@ -6,6 +7,7 @@ const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const routes = require('./routes');
+const { ValidationError } = require('sequelize');
 
 const { environment } = require('./config');
 const isProduction = environment === 'production';
@@ -48,5 +50,36 @@ app.use(
 
 app.use(routes); // Connect app to all of the routes
 
+// If this resource is not found, the app will render these errors
+app.use((_req, _res, next) => {
+    const err = new Error("The requested resource couldn't be found");
+    err.title = 'Resource Not Found!';
+    err.errors = ["The requested resource couldn't be found"];
+    err.status = 404;
+    next(err);
+});
+
+// If there is an error and the error is an instance of ValidationError from the sequelize package, then the error was created from a sequelize database validation error
+app.use((err, _req, _res, next) => {
+    if (err instanceof ValidationError) {
+        err.errors = err.errors.map((e) => e.message);
+        err.title = 'Validation Error';
+    }
+    next(err);
+})
+
+// The error handler is for formatting the errors before returning JSON
+app.use((err, _req, res, next) => {
+    res.status(res.status || 500);
+    console.log(err);
+    res.json({
+        title: err.title || "Server Error",
+        message: err.message,
+        errors: err.errors,
+        stack: isProduction ? null : err.stack
+    })
+})
+
 module.exports = app;
 
+// pause of backend phase 2 error handling
