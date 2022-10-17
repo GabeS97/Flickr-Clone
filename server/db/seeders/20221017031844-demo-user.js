@@ -36,7 +36,8 @@ module.exports = {
      * Add commands to revert seed here.
      */
     options.tableName = 'Users';
-    await queryInterface.bulkDelete('options', {
+    const Op = Sequelize.Op;
+    await queryInterface.bulkDelete(options, {
       username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
     }, {});
 
