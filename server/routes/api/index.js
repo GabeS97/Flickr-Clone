@@ -8,7 +8,7 @@ const userRouter = require('./users')
 router.use(restoreUser);
 
 router.use('/session', sessionRouter)
-router.use('/user', userRouter)
+router.use('/users', userRouter)
 
 router.get(
     '/restore-user',
