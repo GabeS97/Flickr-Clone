@@ -1,0 +1,21 @@
+.header__banner {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  background-color: rgb(33, 33, 35);
+  height: 48px;
+}
+
+.header__left {
+  /* height: 50px; */
+  display: flex;
+  object-fit: contain;
+  position: relative;
+  height: 140px;
+  padding-left: 10rem;
+}
+
+.header__middle {
+  flex: 1;
+  background-color: white;
+}
