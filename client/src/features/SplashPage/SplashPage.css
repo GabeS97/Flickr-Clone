@@ -8,5 +8,35 @@
   background-size: contain;
   background-color: beige;
 
-  transform: opacity ;
+  transform: opacity;
+}
+
+.splashPage__start {
+  color: white;
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  bottom: 3rem;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  text-align: center;
+}
+
+.splashPage__h1Start {
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+.splashPage__buttonStart {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 4rem;
+    width: 13rem;
 }

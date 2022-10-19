@@ -1,9 +1,9 @@
 .header {
-  background-color: rgb(33, 33, 35);
+  background-color: rgba(33, 33, 35, 0.383);
   display: flex;
   justify-content: space-between;
   position: sticky;
-  height: 3.75rem;
+  height: 3.85rem;
   grid-template-columns: repeat(3, auto);
 }
 
@@ -44,7 +44,7 @@
 .header__left {
   flex: 0.15;
   /* padding-right: 5rem; */
-  margin-right: 7rem ;
+  margin-right: 7rem;
 }
 .header__right {
   /* padding-left: 5rem; */
@@ -62,7 +62,6 @@
 }
 
 .header__buttons {
-
   position: relative;
   display: flex;
   width: 100%;
@@ -86,5 +85,5 @@
   height: 2rem;
   font-size: medium;
   width: 6rem;
-  padding: 5px
+  padding: 5px;
 }
