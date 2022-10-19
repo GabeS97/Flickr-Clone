@@ -1,0 +1,19 @@
+.authHeader__header {
+  background-color: rgba(33, 33, 35);
+  display: flex;
+  position: sticky;
+  height: 3rem;
+  position: relative;
+  align-items: center;
+}
+
+.authHeader__logo {
+  padding: 0;
+  margin-left: 10rem;
+  object-fit: contain;
+  height: 9rem;
+  padding: 1rem;
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+}

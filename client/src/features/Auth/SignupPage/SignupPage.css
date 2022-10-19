@@ -1,0 +1,69 @@
+.signupPage {
+  overflow-y: hidden;
+}
+
+.signupPage__background {
+  position: fixed;
+  object-fit: cover;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.signupPage__formContainer {
+  height: 45rem;
+  width: 20rem;
+  background-color: white;
+  position: absolute;
+  z-index: 5;
+  text-align: center;
+  position: absolute;
+  top: 26%;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.signupPage__formHeader {
+  position: relative;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.signupPage__logo {
+  height: 2rem;
+  object-fit: contain;
+}
+
+.signupPage__title {
+  font-size: large;
+  font-weight: 600;
+  bottom: .5em;
+  position: relative;
+}
+
+.signup__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+    margin: 1em;
+}
+
+.signup__form > input,button {
+    height: 3rem;
+}
+
+.signup__form > button {
+    color: white;
+    font-weight: bolder;
+    border: none;
+    ;
+    background-color: rgb(16, 143, 220);
+}
+
+.signup__form > input::placeholder {
+    padding-left: 1rem;
+}

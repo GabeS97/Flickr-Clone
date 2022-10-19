@@ -3,10 +3,9 @@
   width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
-  position: fixed;
   margin: 0;
+  position: fixed;
   background-size: contain;
-  background-color: beige;
 
   transform: opacity;
 }
@@ -17,6 +16,7 @@
   height: 100vh;
   display: flex;
   width: 100vw;
+
   justify-content: center;
   bottom: 3rem;
   align-items: center;
